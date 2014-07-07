@@ -7,7 +7,7 @@ struct person
  int salary;
  struct person *next;
 };
-int ptr,cccc;
+int ptr,cccc,xx;
 
 struct person *inputinfo(char fi, char la, int sa, struct person *nx)
 {
@@ -38,23 +38,29 @@ void printinfo(struct person *ptr)
 
 int main(int argc, const char *argv[])
 {
- printf("press 1 for new data, 2 for printing current data \n");
- scanf("%u",cccc);
- if(cccc = 1)
+ xx = 1;
+ struct person headolist = NULL;
+ while(xx > 0)
  {
-  printf("first name?\n");
-  scanf("%c \n",newfirst);
-  printf("last name?\n");
-  scanf("%c \n",newlast);
-  printf("salary?\n");
-  scanf("%d \n",newsalary);
- }
- if(cccc = 2)
- {
-  printinfo(firstdata);
- }
- else
- {
-  printf("invalid input\n")
+  printf("press 1 for new data, 2 for printing current data \n");
+  scanf("%u",cccc);
+  if(cccc = 1)
+  {
+   printf("first name?\n");
+   scanf("%c \n",newfirst);
+   printf("last name?\n");
+   scanf("%c \n",newlast);
+   printf("salary?\n");
+   scanf("%d \n",newsalary);
+  }
+  if(cccc = 2)
+  {
+   printinfo(firstdata);
+  }
+  else
+  {
+   printf("invalid input\n")
+  }
+  xx++;
  }
  return 0;
