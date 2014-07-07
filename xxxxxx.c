@@ -2,12 +2,11 @@
 #include<stdlib.h>
 struct person
 {
- char first;
- char last;
- int salary;
+ char *first;
+ char *last;
+ int *salary;
  struct person *next;
 };
-int ptr,cccc,xx;
 
 struct person *inputinfo()
 {
@@ -22,8 +21,7 @@ struct person *inputinfo()
  printf("salary? \n");
  scanf("%d",&sa);
  newperson->salary = sa;
- nx = head->next;
- newperson->next = nx;
+ newperson->next = NULL;
  return newperson;
 }
 
@@ -45,10 +43,14 @@ void printinfo(struct person *ptr)
 
 int main(int argc, const char *argv[])
 {
+ int xx = 1;
  struct person *head = NULL;
- printf("1 4 input, 2 4 output \n");
- scanf("%d",&act);
- if(act == 1) addinfo(head,inputinfo);
- if(act == 2) printinfo;
+ while(xx>0)
+ {
+  printf("1 4 input, 2 4 output\n");
+  scanf("%d",&act);
+  if(act == 1) addinfo(head,inputinfo);
+  if(act == 2) printinfo;
+ }
  return 0;
 }
