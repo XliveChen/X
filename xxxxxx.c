@@ -47,10 +47,11 @@ int main(int argc, const char *argv[])
  struct person *head = NULL;
  while(xx>0)
  {
-  printf("1 4 input, 2 4 output\n");
+  printf("1 4 input, 2 4 output, 3 4 free memory\n");
   scanf("%d",&act);
   if(act == 1) addinfo(head,inputinfo);
   if(act == 2) printinfo;
+  if(act == 3) fremeomory;
  }
  return 0;
 }
