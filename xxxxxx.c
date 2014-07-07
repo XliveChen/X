@@ -9,13 +9,20 @@ struct person
 };
 int ptr,cccc,xx;
 
-struct person *inputinfo(char fi, char la, int sa, struct person *nx)
+struct person *inputinfo()
 {
- struct person *newperson;
+ struct person *newperson = NULL;
  newperson = (struct person *) malloc(1 * sizeof(struct person));
+ printf("first name? \n");
+ scanf("%c",&fi);
  newperson->first = fi;
+ printf("last name? \n");
+ scanf("%c",&la);
  newperson->last = la;
+ printf("salary? \n");
+ scanf("%d",&sa);
  newperson->salary = sa;
+ nx = head->next;
  newperson->next = nx;
  return newperson;
 }
@@ -38,29 +45,10 @@ void printinfo(struct person *ptr)
 
 int main(int argc, const char *argv[])
 {
- xx = 1;
- struct person headolist = NULL;
- while(xx > 0)
- {
-  printf("press 1 for new data, 2 for printing current data \n");
-  scanf("%u",cccc);
-  if(cccc = 1)
-  {
-   printf("first name?\n");
-   scanf("%c \n",newfirst);
-   printf("last name?\n");
-   scanf("%c \n",newlast);
-   printf("salary?\n");
-   scanf("%d \n",newsalary);
-  }
-  if(cccc = 2)
-  {
-   printinfo(firstdata);
-  }
-  else
-  {
-   printf("invalid input\n")
-  }
-  xx++;
- }
+ struct person *head = NULL;
+ printf("1 4 input, 2 4 output \n");
+ scanf("%d",&act);
+ if(act == 1) addinfo(head,inputinfo);
+ if(act == 2) printinfo;
  return 0;
+}
